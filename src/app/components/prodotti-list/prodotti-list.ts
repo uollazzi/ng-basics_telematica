@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Prodotto } from '../../models/prodotto';
 import { CommonModule } from '@angular/common';
+import { ProdottoDetail } from "../prodotto-detail/prodotto-detail";
 
 @Component({
   selector: 'app-prodotti-list',
-  imports: [CommonModule],
+  imports: [CommonModule, ProdottoDetail],
   templateUrl: './prodotti-list.html',
   styleUrl: './prodotti-list.css',
 })

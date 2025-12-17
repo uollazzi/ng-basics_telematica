@@ -3,13 +3,7 @@
 
   <div class="flex gap-4">
     @for (p of prodotti; track $index) {
-    <div class="p-4 bg-red-200 mb-4 flex-1 min-w-40">
-      <h4 class="text-xl">{{ p.titolo }}</h4>
-      <p>{{ p.descrizione }}</p>
-      <p>
-        <strong>€ {{ p.prezzo }}</strong>
-      </p>
-    </div>
+    <app-prodotto-detail [prodotto]="p"></app-prodotto-detail>
     }
   </div>
 
