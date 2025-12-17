@@ -1,0 +1,37 @@
+<div class="p-4 bg-blue-200">
+  <h3>Elenco prodotti</h3>
+
+  <div class="flex gap-4">
+    @for (p of prodotti; track $index) {
+    <div class="p-4 bg-red-200 mb-4 flex-1 min-w-40">
+      <h4 class="text-xl">{{ p.titolo }}</h4>
+      <p>{{ p.descrizione }}</p>
+      <p>
+        <strong>€ {{ p.prezzo }}</strong>
+      </p>
+    </div>
+    }
+  </div>
+
+  <h3>Elenco prodotti (alternativo)</h3>
+  <div class="p-4 bg-red-200 mb-4" *ngFor="let p of prodotti">
+    <h4 class="text-xl">{{ p.titolo }}</h4>
+    <p>{{ p.descrizione }}</p>
+    <p>
+      <strong>€ {{ p.prezzo }}</strong>
+    </p>
+  </div>
+
+  <!--
+  <div class="p-4 bg-red-200 mb-4">
+    <h4 class="text-xl">Pallone</h4>
+    <p>Per l'estate</p>
+    <p><strong>€ 19,99</strong></p>
+  </div>
+
+  <div class="p-4 bg-red-200 mb-4">
+    <h4 class="text-xl">Chitarra</h4>
+    <p>Per sempre</p>
+    <p><strong>€ 1999,99</strong></p>
+  </div> -->
+</div>
