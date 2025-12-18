@@ -2,11 +2,22 @@
   <h3>Elenco prodotti</h3>
 
   <div class="flex gap-4">
-    @for (p of prodotti; track $index) {
-    <app-prodotto-detail [prodotto]="p"></app-prodotto-detail>
+    @for (item of prodotti; track $index) {
+    <app-prodotto-detail [prodotto]="item" categoria="Sport"></app-prodotto-detail>
     }
   </div>
 
+  <button
+    (click)="toggleNgForPanel()"
+    class="text-black font-bold py-2 px-4 rounded cursor-pointer"
+    [class.bg-amber-500]="ngForPanelVisible"
+    [class.bg-blue-500]="!ngForPanelVisible"
+    [ngClass]="{ 'text-black': ngForPanelVisible, 'text-white': !ngForPanelVisible }"
+  >
+    {{ ngForPanelVisible ? 'Nascondi' : 'Mostra' }} prodotti *ngFor
+  </button>
+
+  @if (ngForPanelVisible) {
   <h3>Elenco prodotti (alternativo)</h3>
   <div class="p-4 bg-red-200 mb-4" *ngFor="let p of prodotti">
     <h4 class="text-xl">{{ p.titolo }}</h4>
@@ -15,6 +26,7 @@
       <strong>€ {{ p.prezzo }}</strong>
     </p>
   </div>
+  }
 
   <!--
   <div class="p-4 bg-red-200 mb-4">

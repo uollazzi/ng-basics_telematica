@@ -27,4 +27,10 @@ export class ProdottiList {
       prezzo: 1999.99
     }
   ];
+
+  ngForPanelVisible = false;
+
+  toggleNgForPanel() {
+    this.ngForPanelVisible = !this.ngForPanelVisible;
+  }
 }

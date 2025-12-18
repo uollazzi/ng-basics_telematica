@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Prodotto } from '../../models/prodotto';
 
+
 @Component({
   selector: 'app-prodotto-detail',
   imports: [],
@@ -10,4 +11,7 @@ import { Prodotto } from '../../models/prodotto';
 export class ProdottoDetail {
   @Input()
   prodotto?: Prodotto;
+
+  @Input()
+  categoria: string = "";
 }
